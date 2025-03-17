@@ -304,5 +304,8 @@ def update_dashboard(n):
        
     return fig_linha, fig_linha_sol, fig_pizza, dados_tabela, colunas_tabela, fig_trades, fig_barras
 
-if __name__ == '__main__':
-    app.run_server(debug=False)
+app = dash.Dash(__name__)
+server = app.server  # Isso é necessário para o Gunicorn rodar a aplicação
+
+if __name__ == "__main__":
+    app.run_server(debug=True)
